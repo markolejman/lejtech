@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match LEJTECH brand colors */
+  --background: #fafafa; /* zinc-50 */
+  --foreground: #18181b; /* zinc-900 */
+  --card: #fafafa;
+  --card-foreground: #18181b;
+  --popover: #fafafa;
+  --popover-foreground: #18181b;
+  --primary: #18181b; /* zinc-900 for primary actions */
+  --primary-foreground: #fafafa;
+  --secondary: #71717a; /* zinc-500 */
+  --secondary-foreground: #fafafa;
+  --muted: #e4e4e7; /* zinc-200 */
+  --muted-foreground: #52525b; /* zinc-600 */
+  --accent: #71717a;
+  --accent-foreground: #fafafa;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #d4d4d8; /* zinc-300 */
+  --input: #f4f4f5; /* zinc-100 */
+  --ring: #71717a;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0rem; /* No border radius as requested */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #71717a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #d4d4d8;
+  --sidebar-ring: #71717a;
+}
+
+.dark {
+  --background: #09090b; /* zinc-950 */
+  --foreground: #fafafa; /* zinc-50 */
+  --card: #09090b;
+  --card-foreground: #fafafa;
+  --popover: #09090b;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+  --secondary: #71717a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a; /* zinc-800 */
+  --muted-foreground: #a1a1aa; /* zinc-400 */
+  --accent: #71717a;
+  --accent-foreground: #fafafa;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: #3f3f46; /* zinc-700 */
+  --input: #18181b; /* zinc-900 */
+  --ring: #a1a1aa;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #fafafa;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: #71717a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #3f3f46;
+  --sidebar-ring: #a1a1aa;
+}
+
+@theme inline {
+  /* Updated font variables to use Roboto */
+  --font-sans: "Roboto", var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom styles for LEJTECH landing page */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+.hero-gradient {
+  background: linear-gradient(135deg, #e4e4e7 0%, #fafafa 50%, #e4e4e7 100%);
+}
+
+.glassmorphism {
+  background: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 212, 216, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.parallax-text {
+  /* Reduced parallax movement from 0.5 to 0.1 for more subtle effect */
+  transform: translateY(calc(var(--scroll-y, 0) * 0.1));
+}
+
+.carousel-container {
+  animation: scroll-left 30s linear infinite;
+}
+
+.carousel-container:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Added modern form gradient styles */
+.form-gradient {
+  background: linear-gradient(135deg, #fafafa 0%, #f4f4f5 50%, #e4e4e7 100%);
+  border: 1px solid #d4d4d8;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-input-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 1px solid #d4d4d8;
+  transition: all 0.3s ease;
+}
+
+.form-input-gradient:focus {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f4f5 100%);
+  border-color: #71717a;
+  box-shadow: 0 0 0 3px rgba(113, 113, 122, 0.1);
+}
+
+.submit-button-gradient {
+  background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #18181b 100%);
+  transition: all 0.3s ease;
+}
+
+.submit-button-gradient:hover {
+  background: linear-gradient(135deg, #27272a 0%, #3f3f46 50%, #27272a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
