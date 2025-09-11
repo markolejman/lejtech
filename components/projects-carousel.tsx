@@ -59,9 +59,9 @@ export function ProjectsCarousel() {
                 alt={project.title}
                 className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 rounded-xl"
               />
-              <div className="absolute inset-0 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-zinc-900/50 rounded-xl">
-                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white text-xl font-semibold bg-white/10 border border-white/20 backdrop-blur-md rounded-md px-3 py-1">
+              <div className="absolute inset-0 group-hover:shadow-2xl group-hover:shadow-zinc-900/50 rounded-xl">
+                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-full group-hover:translate-x-0">
+                  <h3 className="text-white text-xl font-semibold bg-black/40 border border-white/20 backdrop-blur-[4px] rounded-md px-3 py-1 shadow-lg">
                     {project.title}
                   </h3>
                 </div>
