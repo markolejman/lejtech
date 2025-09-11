@@ -46,17 +46,17 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-white/10 backdrop-blur-md mx-4 mt-4 rounded-full border border-white/20"
+          ? "bg-white/10 backdrop-blur-md mx-4 mt-4 border border-white/20"
           : "bg-white"
-      }`}
+      } ${isScrolled ? "rounded-[32px]" : "rounded-[0px]"}`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div
             className={`text-2xl font-semibold transition-colors duration-300 ${
-              isScrolled ? "text-white" : "text-zinc-900"
+              isScrolled ? "text-zinc-800" : "text-zinc-900"
             }`}
           >
             LEJTECH
@@ -78,8 +78,8 @@ export function Navbar() {
                   ${
                     isScrolled
                       ? activeSection === id
-                        ? "text-white bg-white/20"
-                        : "text-white/70 hover:text-white hover:bg-white/10"
+                        ? "text-zinc-800 bg-white/80"
+                        : "text-zinc-700 hover:text-zinc-900 hover:bg-white/60"
                       : activeSection === id
                       ? "text-zinc-900 bg-zinc-100"
                       : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100/50"
