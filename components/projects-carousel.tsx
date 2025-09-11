@@ -52,14 +52,14 @@ export function ProjectsCarousel() {
               href={project.link || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 w-96 h-64 bg-card overflow-hidden group cursor-pointer relative block rounded-md"
+              className="flex-shrink-0 w-96 h-64 bg-card overflow-hidden group cursor-pointer relative block rounded-xl"
             >
               <img
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 rounded-md"
+                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 rounded-xl"
               />
-              <div className="absolute inset-0 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-zinc-900/50 rounded-md">
+              <div className="absolute inset-0 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-zinc-900/50 rounded-xl">
                 <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3 className="text-white text-xl font-semibold bg-white/10 border border-white/20 backdrop-blur-md rounded-md px-3 py-1">
                     {project.title}
