@@ -1,38 +1,43 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    setFormData({ name: "", email: "", message: "" })
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
-    <section id="contact" className="py-20 bg-zinc-50">
+    <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-8 text-center">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-8 text-center">
+            Get In Touch
+          </h2>
           <p className="text-zinc-600 text-center mb-12 text-lg">
-            Ready to start your next project? Let's discuss how we can bring your ideas to life.
+            Ready to start your next project? Let's discuss how we can bring
+            your ideas to life.
           </p>
 
           <div className="form-gradient p-8 backdrop-blur-sm">
@@ -81,5 +86,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

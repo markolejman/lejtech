@@ -219,3 +219,15 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
+
+/* Previous work section background gradient */
+.previous-work-gradient {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f7f9fc,
+    #eef2f7,
+    #e8ecf2,
+    #dee3eb
+  );
+}

@@ -1,22 +1,35 @@
-"use client"
+"use client";
 
 export function ProjectsCarousel() {
   const projects = [
-    { id: 1, title: "E-commerce Platform", image: "/modern-ecommerce-website.png" },
+    {
+      id: 1,
+      title: "E-commerce Platform",
+      image: "/modern-ecommerce-website.png",
+    },
     { id: 2, title: "SaaS Dashboard", image: "/modern-dashboard.png" },
     { id: 3, title: "Mobile App", image: "/mobile-app-interface.png" },
-    { id: 4, title: "Portfolio Website", image: "/portfolio-website-design.png" },
+    {
+      id: 4,
+      title: "Portfolio Website",
+      image: "/portfolio-website-design.png",
+    },
     { id: 5, title: "AI Platform", image: "/ai-platform-interface.jpg" },
     { id: 6, title: "Fintech App", image: "/fintech-app-design.jpg" },
-  ]
+  ];
 
   // Duplicate projects for seamless loop
-  const duplicatedProjects = [...projects, ...projects]
+  const duplicatedProjects = [...projects, ...projects];
 
   return (
-    <section id="projects" className="py-20 bg-background overflow-hidden">
+    <section
+      id="projects"
+      className="py-20 previous-work-gradient overflow-hidden"
+    >
       <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center">Previous work</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center">
+          Previous work
+        </h2>
       </div>
 
       <div className="relative">
@@ -43,5 +56,5 @@ export function ProjectsCarousel() {
         </div>
       </div>
     </section>
-  )
+  );
 }
