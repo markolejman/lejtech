@@ -104,16 +104,16 @@ export function HeroSection() {
         style={{ "--scroll-y": `${scrollY}px` } as React.CSSProperties}
       >
         <h1
-          className="text-7xl md:text-8xl lg:text-9xl text-zinc-50 tracking-wider drop-shadow-sm mb-12 font-serif font-light"
+          className="text-7xl md:text-8xl lg:text-9xl text-zinc-50 tracking-wider mb-12 font-serif font-light"
           style={{ fontFamily: "Roboto, sans-serif" }}
         >
-          LEJTECH
+          {"< LEJTECH />"}
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             onClick={() => scrollToSection("contact")}
-            className="bg-zinc-50 text-zinc-900 hover:bg-zinc-200 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[30px] hover:rounded-[4px]"
+            className="bg-zinc-50 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[30px] hover:rounded-[4px]"
           >
             Get in touch
           </Button>

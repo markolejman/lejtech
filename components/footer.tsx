@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowUp, Github, ExternalLink, Linkedin } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowUp, Github, ExternalLink, Linkedin } from "lucide-react";
 
 export function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-16">
+    <footer className="bg-[linear-gradient(135deg,#18181b,#393538,#18181b)] text-primary-foreground py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
-            <img src="/lejtech-logo.png" alt="LEJTECH Logo" className="h-12 mb-4 filter invert" />
+            <img src="/lejtech.png" alt="LEJTECH Logo" className="h-24 mb-4" />
             <p className="text-primary-foreground/80 leading-relaxed">
-              Professional web development solutions with a focus on modern technologies and exceptional user
-              experiences.
+              Professional web development solutions with a focus on modern
+              technologies and exceptional user experiences.
             </p>
           </div>
 
@@ -33,28 +33,28 @@ export function Footer() {
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("hero")}
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 Home
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("about")}
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 About
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("projects")}
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 Projects
               </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("contact")}
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 Contact
               </Button>
@@ -67,7 +67,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 asChild
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
                   href="https://github.com"
@@ -82,7 +82,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 asChild
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
                   href="https://fiverr.com"
@@ -97,7 +97,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 asChild
-                className="text-primary-foreground/80 hover:text-primary-foreground p-0 h-auto justify-start"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
                   href="https://linkedin.com"
@@ -130,5 +130,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
