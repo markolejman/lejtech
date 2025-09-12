@@ -39,7 +39,7 @@ export function ProjectsCarousel() {
       className="py-20 previous-work-gradient overflow-hidden"
     >
       <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#303032] text-center">
           Previous work
         </h2>
       </div>

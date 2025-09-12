@@ -56,7 +56,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <div
             className={`text-2xl font-semibold transition-colors duration-300 ${
-              isScrolled ? "text-zinc-800" : "text-zinc-900"
+              isScrolled ? "text-[#303032]" : "text-[#303032]"
             }`}
           >
             LEJTECH
@@ -78,11 +78,11 @@ export function Navbar() {
                   ${
                     isScrolled
                       ? activeSection === id
-                        ? "text-zinc-800 bg-white/80"
-                        : "text-zinc-700 hover:text-zinc-900 hover:bg-white/60"
+                        ? "text-[#303032] bg-white/80"
+                        : "text-[#303032]/80 hover:text-[#303032] hover:bg-white/60"
                       : activeSection === id
-                      ? "text-zinc-900 bg-zinc-100"
-                      : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100/50"
+                      ? "text-[#303032] bg-zinc-100"
+                      : "text-[#303032]/70 hover:text-[#303032] hover:bg-zinc-100/50"
                   }
                 `}
               >
