@@ -77,8 +77,8 @@
 
 @theme inline {
   /* Updated font variables to use Roboto */
-  --font-sans: "Roboto", var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Google Sans Code", monospace;
+  --font-mono: "Google Sans Code", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -127,7 +127,13 @@
 }
 
 /* Added custom styles for LEJTECH landing page */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
+
+.font-google-sans-code {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 .hero-gradient {
   background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #18181b 100%);

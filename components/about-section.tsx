@@ -91,17 +91,17 @@ export function AboutSection() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="fade-in mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#303032] mb-8 text-center">
+            <h2 className="text-4xl md:text-5xl text-[#303032] mb-8 text-center font-google-sans-code">
               About LEJTECH
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             <div className="fade-in">
-              <h3 className="text-2xl font-bold text-[#303032] mb-6">
+              <h3 className="text-2xl text-[#303032] mb-6 font-google-sans-code">
                 Meet Marko
               </h3>
-              <p className="text-[#303032] leading-relaxed text-lg">
+              <p className="text-[#303032] leading-relaxed text-lg font-google-sans-code">
                 I'm a creative and detail-oriented fullstack software engineer
                 with a strong passion for frontend development. I love building
                 fast, secure, and visually sharp applications and websites,
@@ -117,19 +117,19 @@ export function AboutSection() {
             </div>
 
             <div className="fade-in">
-              <h3 className="text-2xl font-bold text-[#303032] mb-6">
+              <h3 className="text-2xl text-[#303032] mb-6 font-google-sans-code">
                 Technical Expertise
               </h3>
               {Object.entries(skills).map(([category, skillList]) => (
                 <div key={category} className="mb-6">
-                  <h4 className="text-lg font-semibold text-[#303032] mb-3">
+                  <h4 className="text-lg text-[#303032] mb-3 font-google-sans-code">
                     {category}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {skillList.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-zinc-700 text-white text-sm font-medium hover:bg-zinc-600 transition-colors duration-200"
+                        className="px-3 py-1 bg-zinc-700 text-white text-sm hover:bg-zinc-600 transition-colors duration-200 font-google-sans-code"
                       >
                         {skill}
                       </span>
