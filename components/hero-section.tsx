@@ -92,8 +92,8 @@ export function HeroSection() {
       ></canvas>
       <div className="text-center relative z-10">
         <h1
-          className="text-7xl md:text-8xl lg:text-9xl text-zinc-50 tracking-wider mb-12 font-serif font-light"
-          style={{ fontFamily: "Roboto, sans-serif" }}
+          className="text-7xl md:text-8xl lg:text-9xl tracking-wider mb-12 font-serif font-light"
+          style={{ fontFamily: "Roboto, sans-serif", color: "#303032" }}
         >
           {"< LEJTECH />"}
         </h1>
@@ -101,14 +101,14 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             onClick={() => scrollToSection("contact")}
-            className="bg-zinc-50 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[30px] hover:rounded-[4px]"
+            className="bg-zinc-50 text-[#303032] hover:bg-[#303032] hover:text-zinc-50 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
           >
             Get in touch
           </Button>
           <Button
             onClick={() => scrollToSection("projects")}
             variant="outline"
-            className="bg-transparent text-zinc-50 border-2 border-zinc-50 hover:bg-zinc-50/10 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[30px] hover:rounded-[4px]"
+            className="bg-transparent text-[#303032] border-2 border-[#303032] hover:bg-[#303032]/10 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
           >
             Previous work
           </Button>
