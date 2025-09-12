@@ -5,14 +5,9 @@ import { Button } from "@/components/ui/button";
 import { NeatGradient } from "@firecms/neat";
 
 export function HeroSection() {
-  const [scrollY, setScrollY] = useState(0);
   const gradientRef = useRef<any>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
     const initGradient = (canvas: HTMLCanvasElement) => {
       // Cleanup previous instance if it exists
       if (gradientRef.current) {
@@ -63,7 +58,6 @@ export function HeroSection() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
     // Initial setup
@@ -75,7 +69,6 @@ export function HeroSection() {
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
       if (gradientRef.current) {
         gradientRef.current.destroy();
@@ -99,10 +92,7 @@ export function HeroSection() {
         id="neat-background"
         className="absolute inset-0 z-0 w-full h-full"
       ></canvas>
-      <div
-        className="parallax-text text-center relative z-10"
-        style={{ "--scroll-y": `${scrollY}px` } as React.CSSProperties}
-      >
+      <div className="text-center relative z-10">
         <h1
           className="text-7xl md:text-8xl lg:text-9xl text-zinc-50 tracking-wider mb-12 font-serif font-light"
           style={{ fontFamily: "Roboto, sans-serif" }}
