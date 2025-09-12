@@ -49,7 +49,7 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
           ? "bg-white/10 backdrop-blur-md mx-4 mt-4 border border-white/20"
-          : "bg-white/80 backdrop-blur-sm"
+          : "bg-white/20 backdrop-blur-sm"
       } ${isScrolled ? "rounded-[32px]" : "rounded-[0px]"}`}
     >
       <div className="container mx-auto px-6 py-4">

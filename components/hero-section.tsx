@@ -101,14 +101,14 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             onClick={() => scrollToSection("contact")}
-            className="bg-zinc-50 text-[#303032] hover:bg-[#303032] hover:text-zinc-50 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
+            className="bg-[#303032] text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
           >
             Get in touch
           </Button>
           <Button
             onClick={() => scrollToSection("projects")}
             variant="outline"
-            className="bg-transparent text-[#303032] border-2 border-[#303032] hover:bg-[#303032]/10 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
+            className="bg-transparent text-[#303032] border-2 border-[#303032] hover:bg-transparent hover:text-zinc-700 hover:border-zinc-700 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
           >
             Previous work
           </Button>
