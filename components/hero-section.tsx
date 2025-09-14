@@ -76,7 +76,8 @@ export function HeroSection() {
 
   useEffect(() => {
     const style = document.createElement("style");
-    style.textContent = `a { display: none !important; }`;
+    // Limit to hero section so other anchors (e.g., carousels, nav) remain visible
+    style.textContent = `#hero a { display: none !important; }`;
     document.head.appendChild(style);
     return () => {
       document.head.removeChild(style);
