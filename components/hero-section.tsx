@@ -74,6 +74,15 @@ export function HeroSection() {
     };
   }, []);
 
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `a { display: none !important; }`;
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
