@@ -24,7 +24,7 @@ export function HeroSection() {
           { color: "#ffffff", enabled: true }, // White
           { color: "#cacacf", enabled: true }, // Light Gray
         ],
-        speed: 2,
+        speed: 6,
         horizontalPressure: 2,
         verticalPressure: 5,
         waveFrequencyX: 2,

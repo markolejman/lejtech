@@ -122,7 +122,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
 }
 
@@ -236,4 +236,76 @@
     #e8ecf2,
     #dee3eb
   );
+}
+
+/* --- Marquee carousels for About -> Technical Expertise --- */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  --marquee-duration: 60s; /* default mobile: slower */
+  isolation: isolate; /* prevent child overflow from affecting page */
+  overscroll-behavior-x: none;
+  /* Edge fade removed on request */
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0.75rem; /* ~12px */
+  width: max-content; /* let content decide width without affecting page */
+  will-change: transform;
+  pointer-events: none; /* hovering should not affect anything */
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-left .marquee-track {
+  animation: marquee-left var(--marquee-duration, 60s) linear infinite;
+}
+
+.marquee-right .marquee-track {
+  animation: marquee-right var(--marquee-duration, 60s) linear infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left .marquee-track,
+  .marquee-right .marquee-track {
+    animation: none;
+  }
+}
+
+/* Speed up progressively on larger screens */
+@media (min-width: 640px) {
+  .marquee {
+    --marquee-duration: 48s;
+  }
+}
+@media (min-width: 1024px) {
+  .marquee {
+    --marquee-duration: 32s;
+  }
+}
+@media (min-width: 1536px) {
+  .marquee {
+    --marquee-duration: 28s;
+  }
 }
