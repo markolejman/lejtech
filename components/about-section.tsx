@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const skills = {
   Frontend: [
@@ -67,11 +67,6 @@ const skills = {
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const duplicatedSkills = useMemo(() => {
-    return Object.fromEntries(
-      Object.entries(skills).map(([k, v]) => [k, [...v, ...v]])
-    );
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -125,7 +120,7 @@ export function AboutSection() {
               <h3 className="text-2xl text-[#303032] mb-6 font-google-sans-code">
                 Technical Expertise
               </h3>
-              {Object.entries(duplicatedSkills).map(([category, skillList]) => {
+              {Object.entries(skills).map(([category, skillList]) => {
                 const isRight = category === "Backend";
                 return (
                   <div key={category} className="mb-8">
@@ -137,15 +132,27 @@ export function AboutSection() {
                         isRight ? "marquee-right" : "marquee-left"
                       } rounded-2xl`}
                     >
-                      <div className="marquee-track px-3 py-3">
-                        {skillList.map((skill, idx) => (
-                          <span
-                            key={`${skill}-${idx}`}
-                            className="px-4 py-2 md:px-6 md:py-3 bg-zinc-800 text-white text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none"
-                          >
-                            {skill}
-                          </span>
-                        ))}
+                      <div className="marquee-track">
+                        <div className="marquee-segment">
+                          {skillList.map((skill) => (
+                            <span
+                              key={`seg1-${category}-${skill}`}
+                              className="px-4 py-2 md:px-6 md:py-3 bg-zinc-800 text-white text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="marquee-segment" aria-hidden="true">
+                          {skillList.map((skill) => (
+                            <span
+                              key={`seg2-${category}-${skill}`}
+                              className="px-4 py-2 md:px-6 md:py-3 bg-zinc-800 text-white text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

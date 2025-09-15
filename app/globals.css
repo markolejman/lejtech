@@ -253,7 +253,6 @@
 
 .marquee-track {
   display: flex;
-  gap: 0.75rem; /* ~12px */
   width: max-content; /* let content decide width without affecting page */
   will-change: transform;
   pointer-events: none; /* hovering should not affect anything */
@@ -283,6 +282,18 @@
 
 .marquee-right .marquee-track {
   animation: marquee-right var(--marquee-duration, 60s) linear infinite;
+}
+
+/* Two identical inline segments to create a seamless loop */
+.marquee-segment {
+  display: inline-flex;
+  gap: 0.75rem; /* spacing between pills */
+  padding: 0.75rem 0; /* vertical only to avoid seam gap */
+}
+
+/* Ensure seam spacing equals inner gap */
+.marquee-segment + .marquee-segment {
+  margin-left: 0.75rem;
 }
 
 /* Respect reduced motion */
