@@ -97,17 +97,17 @@ export function AboutSection() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 mb-16">
-            <div className="fade-in">
+            <div className="fade-in min-w-0">
               <h3 className="text-2xl text-[#303032] mb-6 font-google-sans-code">
                 Meet Marko
               </h3>
-              <p className="text-[#303032] leading-relaxed text-lg font-google-sans-code">
+              <p className="text-[#303032] leading-relaxed text-base sm:text-lg font-google-sans-code break-words hyphens-auto overflow-hidden">
                 I'm a creative and detail-oriented fullstack software engineer
                 with a strong passion for frontend development. I love building
                 fast, secure, and visually sharp applications and websites,
                 often leveraging modern AI tools to push ideas further.
               </p>
-              <p className="text-[#303032] leading-relaxed text-lg mt-4">
+              <p className="text-[#303032] leading-relaxed text-base sm:text-lg mt-4 break-words hyphens-auto overflow-hidden">
                 I thrive on solving complex challenges, staying ahead of coding
                 trends, and bringing a positive, can-do mindset to every
                 project. Whether working solo or as part of a team, I value
@@ -116,7 +116,7 @@ export function AboutSection() {
               </p>
             </div>
 
-            <div className="fade-in">
+            <div className="fade-in min-w-0">
               <h3 className="text-2xl text-[#303032] mb-6 font-google-sans-code">
                 Technical Expertise
               </h3>
