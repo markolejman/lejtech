@@ -2,6 +2,106 @@
 
 import { useEffect, useRef } from "react";
 
+// Map skill labels to Devicon SVGs (via jsDelivr CDN). Icons list based on TechIcons.dev (sources Devicon).
+// Fallback to local placeholder when an icon is not available.
+const DEVICON_CDN_BASE =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons" as const;
+
+function normalize(label: string) {
+  return label.trim().toLowerCase();
+}
+
+function getIconUrlForSkill(label: string): string | null {
+  const key = normalize(label);
+
+  // Common direct mappings
+  const map: Record<string, string> = {
+    // Frontend
+    react: `${DEVICON_CDN_BASE}/react/react-original.svg`,
+    "next.js": `${DEVICON_CDN_BASE}/nextjs/nextjs-original.svg`,
+    nextjs: `${DEVICON_CDN_BASE}/nextjs/nextjs-original.svg`,
+    typescript: `${DEVICON_CDN_BASE}/typescript/typescript-original.svg`,
+    javascript: `${DEVICON_CDN_BASE}/javascript/javascript-original.svg`,
+    "react native": `${DEVICON_CDN_BASE}/react/react-original.svg`,
+    expo: `${DEVICON_CDN_BASE}/expo/expo-original.svg`,
+    tailwind: "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
+    tailwindcss: "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
+    vue: `${DEVICON_CDN_BASE}/vuejs/vuejs-original.svg`,
+    vuejs: `${DEVICON_CDN_BASE}/vuejs/vuejs-original.svg`,
+    mui: `${DEVICON_CDN_BASE}/materialui/materialui-original.svg`,
+    materialui: `${DEVICON_CDN_BASE}/materialui/materialui-original.svg`,
+    css: `${DEVICON_CDN_BASE}/css3/css3-original.svg`,
+    css3: `${DEVICON_CDN_BASE}/css3/css3-original.svg`,
+    scss: `${DEVICON_CDN_BASE}/sass/sass-original.svg`,
+    sass: `${DEVICON_CDN_BASE}/sass/sass-original.svg`,
+    html: `${DEVICON_CDN_BASE}/html5/html5-original.svg`,
+    html5: `${DEVICON_CDN_BASE}/html5/html5-original.svg`,
+    "three.js": `${DEVICON_CDN_BASE}/threejs/threejs-original.svg`,
+    threejs: `${DEVICON_CDN_BASE}/threejs/threejs-original.svg`,
+    svelte: `${DEVICON_CDN_BASE}/svelte/svelte-original.svg`,
+    bootstrap: `${DEVICON_CDN_BASE}/bootstrap/bootstrap-original.svg`,
+    jquery: `${DEVICON_CDN_BASE}/jquery/jquery-original.svg`,
+    shadcn:
+      "https://images.seeklogo.com/logo-png/51/2/shadcn-ui-logo-png_seeklogo-519786.png",
+
+    // Backend
+    "node.js": `${DEVICON_CDN_BASE}/nodejs/nodejs-original.svg`,
+    nodejs: `${DEVICON_CDN_BASE}/nodejs/nodejs-original.svg`,
+    python: `${DEVICON_CDN_BASE}/python/python-original.svg`,
+    django: `${DEVICON_CDN_BASE}/django/django-plain.svg`,
+    flask: `${DEVICON_CDN_BASE}/flask/flask-original.svg`,
+    firebase: `${DEVICON_CDN_BASE}/firebase/firebase-plain.svg`,
+    postgresql: `${DEVICON_CDN_BASE}/postgresql/postgresql-original.svg`,
+    postgres: `${DEVICON_CDN_BASE}/postgresql/postgresql-original.svg`,
+    mongodb: `${DEVICON_CDN_BASE}/mongodb/mongodb-original.svg`,
+    sql: `${DEVICON_CDN_BASE}/mysql/mysql-original.svg`,
+    nosql: `${DEVICON_CDN_BASE}/mongodb/mongodb-original.svg`,
+    tensorflow: `${DEVICON_CDN_BASE}/tensorflow/tensorflow-original.svg`,
+    pytorch: `${DEVICON_CDN_BASE}/pytorch/pytorch-original.svg`,
+
+    // Tools & Ops
+    git: `${DEVICON_CDN_BASE}/git/git-plain.svg`,
+    github: `${DEVICON_CDN_BASE}/github/github-original.svg`,
+    aws: "https://icon.icepanel.io/Technology/svg/AWS.svg",
+    azure: `${DEVICON_CDN_BASE}/azure/azure-original.svg`,
+    vercel: `${DEVICON_CDN_BASE}/vercel/vercel-original.svg`,
+    heroku: `${DEVICON_CDN_BASE}/heroku/heroku-original.svg`,
+    jest: `${DEVICON_CDN_BASE}/jest/jest-plain.svg`,
+    figma: `${DEVICON_CDN_BASE}/figma/figma-original.svg`,
+    yarn: `${DEVICON_CDN_BASE}/yarn/yarn-original.svg`,
+    jira: `${DEVICON_CDN_BASE}/jira/jira-original.svg`,
+    docker: `${DEVICON_CDN_BASE}/docker/docker-original.svg`,
+    "vercel v0":
+      "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/vercel-v0-icon.png",
+    "cursor ai":
+      "https://registry.npmmirror.com/@lobehub/icons-static-png/1.65.0/files/light/cursor.png",
+    cursor:
+      "https://registry.npmmirror.com/@lobehub/icons-static-png/1.65.0/files/light/cursor.png",
+    "django rest": "https://icon.icepanel.io/Technology/svg/Django-REST.svg",
+    djangorest: "https://icon.icepanel.io/Technology/svg/Django-REST.svg",
+    flyctl: "https://fly.io/static/images/brand/brandmark.svg",
+  };
+
+  if (map[key]) return map[key];
+
+  // Heuristics for grouped labels
+  if (key.includes("django")) return map["django"];
+  if (key.includes("django rest")) return map["django rest"];
+  if (key.includes("djangorest")) return map["djangorest"];
+  if (key.includes("next")) return map["nextjs"];
+  if (key.includes("tailwind")) return map["tailwindcss"];
+  if (key.includes("fly")) return map["flyctl"];
+  if (key.includes("sql")) return map["sql"];
+  if (key.includes("react")) return map["react"];
+  if (key.includes("vue")) return map["vuejs"];
+
+  return null;
+}
+
+function getIconClassForSkill(label: string): string {
+  return "mr-2 h-4 w-4 md:h-5 md:w-5 object-contain";
+}
+
 const skills = {
   Frontend: [
     "React",
@@ -134,24 +234,50 @@ export function AboutSection() {
                     >
                       <div className="marquee-track">
                         <div className="marquee-segment">
-                          {skillList.map((skill) => (
-                            <span
-                              key={`seg1-${category}-${skill}`}
-                              className="px-4 py-2 md:px-6 md:py-3 bg-zinc-800 text-white text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none"
-                            >
-                              {skill}
-                            </span>
-                          ))}
+                          {skillList.map((skill) => {
+                            const iconUrl = getIconUrlForSkill(skill);
+                            return (
+                              <span
+                                key={`seg1-${category}-${skill}`}
+                                className="px-4 py-2 md:px-6 md:py-3 bg-zinc-50 text-[#303032] border border-zinc-800 text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none inline-flex items-center"
+                              >
+                                {iconUrl ? (
+                                  <img
+                                    src={iconUrl}
+                                    alt={`${skill} icon`}
+                                    className={getIconClassForSkill(skill)}
+                                    loading="lazy"
+                                    height={20}
+                                    width={20}
+                                  />
+                                ) : null}
+                                {skill}
+                              </span>
+                            );
+                          })}
                         </div>
                         <div className="marquee-segment" aria-hidden="true">
-                          {skillList.map((skill) => (
-                            <span
-                              key={`seg2-${category}-${skill}`}
-                              className="px-4 py-2 md:px-6 md:py-3 bg-zinc-800 text-white text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none"
-                            >
-                              {skill}
-                            </span>
-                          ))}
+                          {skillList.map((skill) => {
+                            const iconUrl = getIconUrlForSkill(skill);
+                            return (
+                              <span
+                                key={`seg2-${category}-${skill}`}
+                                className="px-4 py-2 md:px-6 md:py-3 bg-zinc-50 text-[#303032] border border-zinc-800 text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none inline-flex items-center"
+                              >
+                                {iconUrl ? (
+                                  <img
+                                    src={iconUrl}
+                                    alt={`${skill} icon`}
+                                    className={getIconClassForSkill(skill)}
+                                    loading="lazy"
+                                    height={20}
+                                    width={20}
+                                  />
+                                ) : null}
+                                {skill}
+                              </span>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
