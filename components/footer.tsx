@@ -18,8 +18,8 @@ export function Footer() {
   return (
     <footer className="bg-[linear-gradient(135deg,#18181b,#393538,#18181b)] text-primary-foreground py-16">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div className="col-span-2 md:col-span-2">
             <img src="/lejtech.png" alt="LEJTECH Logo" className="h-24 mb-4" />
             <p className="text-primary-foreground/80 leading-relaxed">
               Professional web development solutions with a focus on modern
@@ -116,7 +116,8 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-primary-foreground/80 text-sm">
-              © 2025 LEJTECH. All rights reserved. | Registered Business ®
+              © 2025 LEJTECH. All rights reserved. | Registered Business ® |
+              This website is built with LEJTECH
             </div>
             <Button
               onClick={scrollToTop}
