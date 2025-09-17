@@ -58,7 +58,7 @@ export function Navbar() {
         className={`relative w-full ${
           isScrolled
             ? "bg-white/50 backdrop-blur-md border border-white/20"
-            : "bg-white/50 backdrop-blur-sm"
+            : "bg-white/40 backdrop-blur-sm"
         }`}
       >
         <div className="container mx-auto px-6 py-4">
