@@ -197,33 +197,29 @@
 }
 
 /* Added modern form gradient styles */
-.form-gradient {
-  background: linear-gradient(135deg, #fafafa 0%, #f4f4f5 50%, #e4e4e7 100%);
-  border: 1px solid #d4d4d8;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+/* Neumorphic helpers for the contact form */
+.neumorphic {
+  background: #ecf0f3;
+  box-shadow: 8px 8px 16px #d3d9e0, -8px -8px 16px #ffffff;
 }
 
-.form-input-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-  border: 1px solid #d4d4d8;
-  transition: all 0.3s ease;
+.neumorphic-inset {
+  background: #ecf0f3;
+  box-shadow: inset 4px 4px 8px #d3d9e0, inset -4px -4px 8px #ffffff;
 }
 
-.form-input-gradient:focus {
-  background: linear-gradient(135deg, #ffffff 0%, #f4f4f5 100%);
-  border-color: #71717a;
-  box-shadow: 0 0 0 3px rgba(113, 113, 122, 0.1);
+.neumorphic-button {
+  background: #ecf0f3;
+  box-shadow: 6px 6px 12px #d3d9e0, -6px -6px 12px #ffffff;
+  transition: all 0.2s ease;
 }
 
-.submit-button-gradient {
-  background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #18181b 100%);
-  transition: all 0.3s ease;
+.neumorphic-button:hover {
+  box-shadow: 4px 4px 8px #d3d9e0, -4px -4px 8px #ffffff;
 }
 
-.submit-button-gradient:hover {
-  background: linear-gradient(135deg, #27272a 0%, #3f3f46 50%, #27272a 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.neumorphic-button:active {
+  box-shadow: inset 2px 2px 4px #d3d9e0, inset -2px -2px 4px #ffffff;
 }
 
 /* Previous work section background gradient */
