@@ -213,8 +213,13 @@ export function AboutSection() {
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#303032]">
-                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
+                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                    <Check
+                      className="h-5 w-5 text-white"
+                      strokeWidth={3}
+                      strokeLinecap="square"
+                      strokeLinejoin="miter"
+                    />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
                     <span className="font-medium">Inclusive & accessible</span>–
@@ -223,8 +228,13 @@ export function AboutSection() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#303032]">
-                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
+                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                    <Check
+                      className="h-5 w-5 text-white"
+                      strokeWidth={3}
+                      strokeLinecap="square"
+                      strokeLinejoin="miter"
+                    />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
                     <span className="font-medium">
@@ -235,8 +245,13 @@ export function AboutSection() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#303032]">
-                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
+                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                    <Check
+                      className="h-5 w-5 text-white"
+                      strokeWidth={3}
+                      strokeLinecap="square"
+                      strokeLinejoin="miter"
+                    />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
                     <span className="font-medium">Responsive by default</span>–
