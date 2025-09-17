@@ -286,7 +286,7 @@ export function AboutSection() {
                             return (
                               <span
                                 key={`seg1-${category}-${skill}`}
-                                className="px-4 py-2 md:px-6 md:py-3 bg-zinc-50 text-[#303032] border border-zinc-800 text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none inline-flex items-center"
+                                className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-br from-zinc-50 via-zinc-50 to-zinc-100 text-[#303032] border-2 border-zinc-200 text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none inline-flex items-center"
                               >
                                 {iconUrl ? (
                                   <img
@@ -309,7 +309,7 @@ export function AboutSection() {
                             return (
                               <span
                                 key={`seg2-${category}-${skill}`}
-                                className="px-4 py-2 md:px-6 md:py-3 bg-zinc-50 text-[#303032] border border-zinc-800 text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none inline-flex items-center"
+                                className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-br from-zinc-50 via-zinc-50 to-zinc-100 text-[#303032] border-2 border-zinc-200 text-sm md:text-base rounded-full font-google-sans-code whitespace-nowrap select-none inline-flex items-center"
                               >
                                 {iconUrl ? (
                                   <img
