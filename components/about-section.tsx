@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { Check } from "lucide-react";
 
 // Map skill labels to Devicon SVGs (via jsDelivr CDN). Icons list based on TechIcons.dev (sources Devicon).
 // Fallback to local placeholder when an icon is not available.
@@ -189,7 +190,7 @@ export function AboutSection() {
   return (
     <section ref={sectionRef} id="about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto">
           <div className="fade-in mb-16">
             <h2 className="text-4xl md:text-5xl text-[#303032] mb-8 text-center font-google-sans-code">
               About LEJTECH
@@ -210,6 +211,42 @@ export function AboutSection() {
                 to deliver quick, creative solutions that fit your goals and
                 budget — and make users happy.
               </p>
+              <ul className="mt-8 space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5EE7D5]">
+                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  </span>
+                  <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
+                    <span className="font-medium">Inclusive & accessible</span>–
+                    I build websites that meet web-accessibility standards,
+                    ensuring an experience that works for everyone.
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5EE7D5]">
+                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  </span>
+                  <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
+                    <span className="font-medium">
+                      Clean design & performance
+                    </span>
+                    – A neat, fast website gives you better conversion rates.
+                    Nothing hurts ROI more than a buggy or slow user experience.
+                  </p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5EE7D5]">
+                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  </span>
+                  <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
+                    <span className="font-medium">
+                      Modern tools & standards
+                    </span>
+                    – I use up-to-date technologies and best practices to
+                    deliver reliable, high-quality solutions.
+                  </p>
+                </li>
+              </ul>
             </div>
 
             <div className="fade-in min-w-0">
