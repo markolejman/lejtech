@@ -206,10 +206,10 @@ export function AboutSection() {
               </p>
               <p className="text-[#303032] leading-relaxed text-base sm:text-lg mt-4 break-words hyphens-auto overflow-hidden">
                 Whether you need a full application, a landing page that works,
-                or updates to an existing site, I’ll guide you from first idea
-                to finished product. I use AI-assisted coding and a mix of tools
-                to deliver quick, creative solutions that fit your goals and
-                budget — and make users happy.
+                or updates to an existing site, I’ll work from first idea
+                to finished product. I use AI-assisted coding and a mix of
+                modern tools to deliver quick, creative solutions that fit your
+                goals and budget — and make users happy.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3">
@@ -239,11 +239,10 @@ export function AboutSection() {
                     <Check className="h-4 w-4 text-white" strokeWidth={3} />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
-                    <span className="font-medium">
-                      Modern tools & standards
-                    </span>
-                    – I use up-to-date technologies and best practices to
-                    deliver reliable, high-quality solutions.
+                    <span className="font-medium">Responsive by default</span>–
+                    No matter what device your users are on — mobile, desktop,
+                    or anything in between — I deliver working software that
+                    adapts smoothly to all screen sizes.
                   </p>
                 </li>
               </ul>
