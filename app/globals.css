@@ -244,11 +244,24 @@
   overflow: hidden;
   width: 100%;
   --marquee-duration: 60s; /* default mobile: slower */
+  --marquee-edge-fade: 64px; /* wider fade for softer edges */
   isolation: isolate; /* prevent child overflow from affecting page */
   overscroll-behavior-x: none;
-  /* Edge fade removed on request */
-  -webkit-mask-image: none;
-  mask-image: none;
+  /* Soft edge fade so pills appear to fade in/out (not abrupt) */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--marquee-edge-fade),
+    #000 calc(100% - var(--marquee-edge-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--marquee-edge-fade),
+    #000 calc(100% - var(--marquee-edge-fade)),
+    transparent 100%
+  );
 }
 
 .marquee-track {
@@ -308,15 +321,18 @@
 @media (min-width: 640px) {
   .marquee {
     --marquee-duration: 48s;
+    --marquee-edge-fade: 80px;
   }
 }
 @media (min-width: 1024px) {
   .marquee {
     --marquee-duration: 32s;
+    --marquee-edge-fade: 120px;
   }
 }
 @media (min-width: 1536px) {
   .marquee {
     --marquee-duration: 28s;
+    --marquee-edge-fade: 160px;
   }
 }
