@@ -206,15 +206,15 @@ export function AboutSection() {
               </p>
               <p className="text-[#303032] leading-relaxed text-base sm:text-lg mt-4 break-words hyphens-auto overflow-hidden">
                 Whether you need a full application, a landing page that works,
-                or updates to an existing site, I’ll work from first idea
-                to finished product. I use AI-assisted coding and a mix of
-                modern tools to deliver quick, creative solutions that fit your
-                goals and budget — and make users happy.
+                or updates to an existing site, I’ll work from first idea to
+                finished product. I use AI-assisted coding and a mix of modern
+                tools to deliver quick, creative solutions that fit your goals
+                and budget — and make users happy.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5EE7D5]">
-                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
                     <span className="font-medium">Inclusive & accessible</span>–
@@ -223,8 +223,8 @@ export function AboutSection() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5EE7D5]">
-                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
                     <span className="font-medium">
@@ -235,8 +235,8 @@ export function AboutSection() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5EE7D5]">
-                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
                     <span className="font-medium">Responsive by default</span>–
