@@ -51,14 +51,14 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        isScrolled ? "mx-4 mt-4 rounded-[32px]" : "rounded-[0px]"
+        isScrolled ? "mx-4 mt-4 rounded-[16px]" : "rounded-none"
       }`}
     >
       <div
-        className={`relative w-full ${
+        className={`relative w-full transition-all duration-500 ease-in-out ${
           isScrolled
-            ? "bg-white/50 backdrop-blur-md border border-white/20"
-            : "bg-white/40 backdrop-blur-sm"
+            ? "bg-white/50 backdrop-blur-md border border-white/20 rounded-[16px]"
+            : "bg-white/10 backdrop-blur-sm rounded-none"
         }`}
       >
         <div className="container mx-auto px-6 py-4">
