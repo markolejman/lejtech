@@ -168,22 +168,7 @@
   transform: translateY(calc(var(--scroll-y, 0) * 0.1));
 }
 
-.carousel-container {
-  animation: scroll-left 30s linear infinite;
-}
-
-.carousel-container:hover {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+/* Removed old hover-pausing carousel in favor of seamless marquee */
 
 .fade-in {
   opacity: 0;
@@ -260,11 +245,22 @@
   );
 }
 
+/* Disable edge fade for project carousel */
+.marquee.marquee-no-fade {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 .marquee-track {
   display: flex;
   width: max-content; /* let content decide width without affecting page */
   will-change: transform;
   pointer-events: none; /* hovering should not affect anything */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  contain: paint;
 }
 
 @keyframes marquee-left {
@@ -287,6 +283,8 @@
 
 .marquee-left .marquee-track {
   animation: marquee-left var(--marquee-duration, 60s) linear infinite;
+  backface-visibility: hidden; /* reduce subpixel jitter on some GPUs */
+  transform: translateZ(0); /* promote to its own layer for smoother loop */
 }
 
 .marquee-right .marquee-track {
@@ -300,9 +298,19 @@
   padding: 0.75rem 0; /* vertical only to avoid seam gap */
 }
 
+/* Larger gap specifically for project cards */
+.marquee-segment--spacious {
+  gap: 5rem;
+}
+
 /* Ensure seam spacing equals inner gap */
 .marquee-segment + .marquee-segment {
   margin-left: 0.75rem;
+}
+
+/* Ensure the spacious variant keeps a seamless seam equal to its gap */
+.marquee-segment--spacious + .marquee-segment--spacious {
+  margin-left: 5rem;
 }
 
 /* Respect reduced motion */

@@ -30,44 +30,46 @@ export function ProjectsCarousel() {
     },
   ];
 
-  // Duplicate projects for seamless loop
-  const duplicatedProjects = [...projects, ...projects];
-
   return (
     <section
       id="projects"
-      className="py-20 previous-work-gradient overflow-hidden"
+      className="py-[3.75rem] previous-work-gradient overflow-hidden"
     >
-      <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#303032] text-center">
-          Previous work
-        </h2>
-      </div>
-
-      <div className="relative">
-        <div className="carousel-container flex space-x-8">
-          {duplicatedProjects.map((project, index) => (
-            <a
-              key={`${project.id}-${index}`}
-              href={project.link || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 w-96 h-64 bg-card overflow-hidden group cursor-pointer relative block rounded-xl"
-            >
-              <img
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 rounded-xl"
-              />
-              <div className="absolute inset-0 group-hover:shadow-2xl group-hover:shadow-zinc-900/50 rounded-xl">
-                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-full group-hover:translate-x-0">
-                  <h3 className="text-white text-xl font-semibold bg-black/40 border border-white/20 backdrop-blur-[4px] rounded-md px-3 py-1 shadow-lg">
-                    {project.title}
-                  </h3>
-                </div>
+      <div className="marquee marquee-left marquee-no-fade">
+        <div className="marquee-track">
+          <div className="marquee-segment marquee-segment--spacious">
+            {projects.map((project) => (
+              <div
+                key={`seg1-${project.id}`}
+                className="flex-shrink-0 w-[22.5rem] h-[15rem] bg-card overflow-hidden relative rounded-3xl select-none"
+              >
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-3xl"
+                  loading="lazy"
+                />
               </div>
-            </a>
-          ))}
+            ))}
+          </div>
+          <div
+            className="marquee-segment marquee-segment--spacious"
+            aria-hidden="true"
+          >
+            {projects.map((project) => (
+              <div
+                key={`seg2-${project.id}`}
+                className="flex-shrink-0 w-[22.5rem] h-[15rem] bg-card overflow-hidden relative rounded-3xl select-none"
+              >
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-3xl"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
