@@ -33,7 +33,7 @@ export function ProjectsCarousel() {
   return (
     <section
       id="projects"
-      className="py-[3.75rem] previous-work-gradient overflow-hidden"
+      className="py-[3.75rem] bg-background overflow-hidden"
     >
       <div className="marquee marquee-left marquee-no-fade">
         <div className="marquee-track">
