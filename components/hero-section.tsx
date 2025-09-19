@@ -116,11 +116,11 @@ export function HeroSection() {
             Get in touch
           </Button>
           <Button
-            onClick={() => scrollToSection("projects")}
+            onClick={() => scrollToSection("about")}
             variant="outline"
             className="w-48 bg-transparent text-[#303032] border-2 border-[#303032] hover:bg-transparent hover:text-zinc-700 hover:border-zinc-700 px-10 py-4 text-xl font-medium transition-all duration-300 ease-in-out rounded-[4px] hover:rounded-[30px]"
           >
-            Previous work
+            About
           </Button>
         </div>
       </div>
