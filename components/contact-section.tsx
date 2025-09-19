@@ -132,12 +132,12 @@ export function ContactSection() {
                             className="placeholder:text-slate-400"
                           />
                         </SelectTrigger>
-                        <SelectContent className="rounded-2xl border-0 shadow-xl bg-white/95 backdrop-blur-sm">
+                        <SelectContent className="rounded-2xl border-0 shadow-xl bg-white/95 backdrop-blur-sm text-slate-900">
                           {projectTypes.map((type) => (
                             <SelectItem
                               key={type}
                               value={type}
-                              className="capitalize rounded-xl font-light hover:bg-slate-50 focus:bg-slate-50 transition-colors duration-150"
+                              className="capitalize rounded-xl font-light text-slate-900 focus:text-slate-900 hover:bg-slate-50 focus:bg-slate-50 transition-colors duration-150"
                             >
                               {type}
                             </SelectItem>
