@@ -103,7 +103,7 @@ export function HeroSection() {
       <div className="text-center relative z-10">
         <h1
           className="text-6xl md:text-7xl lg:text-8xl tracking-wider mb-12 font-serif font-light"
-          style={{ fontFamily: "Roboto, sans-serif", color: "#ffffff" }}
+          style={{ fontFamily: "Roboto, sans-serif", color: "#303032" }}
         >
           {"< LEJTECH />"}
         </h1>

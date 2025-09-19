@@ -10,9 +10,9 @@ export function FeaturesSection() {
             <Image
               src="/image1about.png"
               alt="Modern web development with analytics dashboard"
-              width={600}
-              height={340}
-              className="rounded-2xl shadow-2xl w-full h-auto"
+              width={420}
+              height={238}
+              className="rounded-2xl shadow-2xl w-[70%] h-auto mx-auto"
               priority
             />
           </div>
@@ -30,7 +30,7 @@ export function FeaturesSection() {
 
         {/* Feature 2: Text Left, Image Right */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="space-y-6 lg:order-1">
+          <div className="space-y-6 order-2 lg:order-1">
             <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
               Content today must be working on both mobile screen sizes and
               desktops and all devices inbetween.
@@ -40,7 +40,7 @@ export function FeaturesSection() {
               tablet, or desktop—at every screen size.
             </p>
           </div>
-          <div className="relative lg:order-2">
+          <div className="relative order-1 lg:order-2">
             <Image
               src="/image2about.png"
               alt="Responsive mobile dashboard design"

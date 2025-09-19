@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,6 +23,36 @@ export function ContactSection() {
     projectType: "",
     projectDetails: "",
   });
+
+  // Match image height to the form's initial height on large screens only
+  const formContainerRef = useRef<HTMLDivElement | null>(null);
+  const [initialFormHeight, setInitialFormHeight] = useState<number | null>(
+    null
+  );
+  const [isLarge, setIsLarge] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const updateIsLarge = () => setIsLarge(mediaQuery.matches);
+    updateIsLarge();
+    mediaQuery.addEventListener("change", updateIsLarge);
+
+    const measure = () => {
+      if (formContainerRef.current) {
+        setInitialFormHeight(formContainerRef.current.offsetHeight);
+      }
+    };
+
+    // Measure at start and on resize to keep initial matching when viewport changes
+    measure();
+    window.addEventListener("resize", measure);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsLarge);
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   const projectTypes = [
     "consultation",
@@ -46,9 +76,16 @@ export function ContactSection() {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
         <div className="min-h-screen bg-background p-0 md:p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-1 order-first">
-              <div className="relative w-full h-64 sm:h-80 lg:h-full rounded-3xl overflow-hidden">
+              <div
+                className="relative w-full h-64 sm:h-80 lg:self-start rounded-3xl overflow-hidden"
+                style={
+                  isLarge && initialFormHeight
+                    ? { height: `${initialFormHeight}px` }
+                    : undefined
+                }
+              >
                 <Image
                   src="/mockup1.png"
                   alt="Project mockup"
@@ -59,17 +96,18 @@ export function ContactSection() {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="rounded-3xl h-full">
-                <div className="text-center space-y-2 mb-10">
-                  <h1 className="text-3xl font-light text-slate-900 tracking-tight">
-                    {"Let's work together"}
-                  </h1>
-                  <p className="text-slate-500 font-light">
-                    {"Tell me about your project and I'll get back to you soon"}
-                  </p>
-                </div>
-
+              <div className="rounded-3xl h-full" ref={formContainerRef}>
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-10">
+                  <div className="text-center space-y-2 mb-8">
+                    <h1 className="text-3xl font-light text-slate-900 tracking-tight">
+                      {"Let's work together"}
+                    </h1>
+                    <p className="text-slate-500 font-light">
+                      {
+                        "Tell me about your project and I'll get back to you soon"
+                      }
+                    </p>
+                  </div>
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
@@ -168,7 +206,7 @@ export function ContactSection() {
                     <div className="space-y-6 pt-4">
                       <Button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white h-14 px-8 rounded-2xl font-medium tracking-wide shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
+                        className="w-full bg-slate-900 hover:bg-slate-800 text-white h-14 px-8 rounded-2xl font-medium tracking-wide shadow-md hover:shadow-lg transition-colors duration-150"
                       >
                         <Send className="w-5 h-5 mr-3" />
                         Send Message
