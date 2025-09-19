@@ -14,16 +14,24 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Image from "next/image";
+import { Send } from "lucide-react";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    subject: "",
-    deliveryTime: "",
-    budget: "",
-    message: "",
+    projectType: "",
+    projectDetails: "",
   });
+
+  const projectTypes = [
+    "consultation",
+    "web development",
+    "a simple landing page",
+    "redesign website",
+    "turn old code to new code",
+    "other",
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +59,7 @@ export function ContactSection() {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="neumorphic rounded-3xl p-8 md:p-12 h-full">
+              <div className="rounded-3xl h-full">
                 <div className="text-center mb-8">
                   <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
                     Get In Touch
@@ -61,175 +69,116 @@ export function ContactSection() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="name"
-                        className="text-sm font-medium text-foreground"
-                      >
-                        Name
-                      </Label>
-                      <div className="neumorphic-inset rounded-2xl p-1">
+                <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 md:p-8">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label
+                          htmlFor="fullName"
+                          className="text-sm font-medium text-gray-700"
+                        >
+                          Full Name <span className="text-red-500">*</span>
+                        </Label>
                         <Input
-                          id="name"
+                          id="fullName"
                           type="text"
-                          value={formData.name}
+                          placeholder="Your name"
+                          value={formData.fullName}
                           onChange={(e) =>
-                            handleInputChange("name", e.target.value)
+                            handleInputChange("fullName", e.target.value)
                           }
-                          className="border-0 bg-transparent text-lg py-4 px-6 rounded-2xl focus:ring-0 focus:outline-none placeholder:text-muted-foreground"
-                          placeholder="Your full name"
                           required
+                          className="h-12 bg-gray-50 border-gray-200 placeholder:text-gray-400 rounded-lg"
                         />
                       </div>
-                    </div>
 
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="email"
-                        className="text-sm font-medium text-foreground"
-                      >
-                        Email
-                      </Label>
-                      <div className="neumorphic-inset rounded-2xl p-1">
+                      <div className="space-y-2">
+                        <Label
+                          htmlFor="email"
+                          className="text-sm font-medium text-gray-700"
+                        >
+                          Email Address <span className="text-red-500">*</span>
+                        </Label>
                         <Input
                           id="email"
                           type="email"
+                          placeholder="your@email.com"
                           value={formData.email}
                           onChange={(e) =>
                             handleInputChange("email", e.target.value)
                           }
-                          className="border-0 bg-transparent text-lg py-4 px-6 rounded-2xl focus:ring-0 focus:outline-none placeholder:text-muted-foreground"
-                          placeholder="your.email@example.com"
                           required
+                          className="h-12 bg-gray-50 border-gray-200 placeholder:text-gray-400 rounded-lg"
                         />
                       </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="subject"
-                      className="text-sm font-medium text-foreground"
-                    >
-                      Subject
-                    </Label>
-                    <div className="neumorphic-inset rounded-2xl p-1">
-                      <Input
-                        id="subject"
-                        type="text"
-                        value={formData.subject}
-                        onChange={(e) =>
-                          handleInputChange("subject", e.target.value)
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="projectType"
+                        className="text-sm font-medium text-gray-700"
+                      >
+                        Project Type <span className="text-red-500">*</span>
+                      </Label>
+                      <Select
+                        value={formData.projectType}
+                        onValueChange={(value) =>
+                          handleInputChange("projectType", value)
                         }
-                        className="border-0 bg-transparent text-lg py-4 px-6 rounded-2xl focus:ring-0 focus:outline-none placeholder:text-muted-foreground"
-                        placeholder="Project subject"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="budget"
-                        className="text-sm font-medium text-foreground"
                       >
-                        Approximated Budget
-                      </Label>
-                      <div className="neumorphic-inset rounded-2xl p-1">
-                        <Select
-                          onValueChange={(value) =>
-                            handleInputChange("budget", value)
-                          }
-                        >
-                          <SelectTrigger className="border-0 bg-transparent text-lg py-4 px-6 rounded-2xl focus:ring-0 focus:outline-none">
-                            <SelectValue placeholder="Select budget range" />
-                          </SelectTrigger>
-                          <SelectContent className="neumorphic border-0 rounded-2xl">
-                            <SelectItem value="under-1k">
-                              Under $1,000
+                        <SelectTrigger className="h-12 w-full bg-gray-50 border-gray-200 rounded-lg">
+                          <SelectValue placeholder="Select a project type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {projectTypes.map((type) => (
+                            <SelectItem
+                              key={type}
+                              value={type}
+                              className="capitalize"
+                            >
+                              {type}
                             </SelectItem>
-                            <SelectItem value="1k-5k">
-                              $1,000 - $5,000
-                            </SelectItem>
-                            <SelectItem value="5k-10k">
-                              $5,000 - $10,000
-                            </SelectItem>
-                            <SelectItem value="10k-25k">
-                              $10,000 - $25,000
-                            </SelectItem>
-                            <SelectItem value="25k-plus">$25,000+</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div className="space-y-2">
                       <Label
-                        htmlFor="deliveryTime"
-                        className="text-sm font-medium text-foreground"
+                        htmlFor="projectDetails"
+                        className="text-sm font-medium text-gray-700"
                       >
-                        Desired Delivery Time
+                        Project Details <span className="text-red-500">*</span>
                       </Label>
-                      <div className="neumorphic-inset rounded-2xl p-1">
-                        <Select
-                          onValueChange={(value) =>
-                            handleInputChange("deliveryTime", value)
-                          }
-                        >
-                          <SelectTrigger className="border-0 bg-transparent text-lg py-4 px-6 rounded-2xl focus:ring-0 focus:outline-none">
-                            <SelectValue placeholder="Select timeline" />
-                          </SelectTrigger>
-                          <SelectContent className="neumorphic border-0 rounded-2xl">
-                            <SelectItem value="asap">ASAP</SelectItem>
-                            <SelectItem value="1-week">
-                              Within 1 week
-                            </SelectItem>
-                            <SelectItem value="2-weeks">
-                              Within 2 weeks
-                            </SelectItem>
-                            <SelectItem value="1-month">
-                              Within 1 month
-                            </SelectItem>
-                            <SelectItem value="flexible">Flexible</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="message"
-                      className="text-sm font-medium text-foreground"
-                    >
-                      Message
-                    </Label>
-                    <div className="neumorphic-inset rounded-2xl p-1">
                       <Textarea
-                        id="message"
-                        value={formData.message}
+                        id="projectDetails"
+                        placeholder="Tell me about your project, timeline, and requirements..."
+                        value={formData.projectDetails}
                         onChange={(e) =>
-                          handleInputChange("message", e.target.value)
+                          handleInputChange("projectDetails", e.target.value)
                         }
-                        className="border-0 bg-transparent text-lg py-4 px-6 rounded-2xl focus:ring-0 focus:outline-none placeholder:text-muted-foreground min-h-32 resize-none"
-                        placeholder="Tell us about your project, goals, and any specific requirements..."
                         required
+                        className="min-h-[200px] bg-gray-50 border-gray-200 placeholder:text-gray-400 resize-none rounded-lg"
                       />
                     </div>
-                  </div>
 
-                  <div className="pt-4">
-                    <Button
-                      type="submit"
-                      className="w-full neumorphic-button border-0 text-lg py-6 px-8 rounded-2xl font-semibold text-foreground hover:bg-accent transition-all duration-200"
-                    >
-                      Send Message
-                    </Button>
-                  </div>
-                </form>
+                    <div className="space-y-4">
+                      <Button
+                        type="submit"
+                        className="bg-slate-800 hover:bg-slate-900 text-white h-12 px-6 rounded-lg font-medium"
+                      >
+                        <Send className="w-4 h-4 mr-2" />
+                        Send Message
+                      </Button>
+
+                      <p className="text-sm text-gray-500">
+                        {
+                          "I'll get back to you within 24 hours with a detailed response and next steps."
+                        }
+                      </p>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
