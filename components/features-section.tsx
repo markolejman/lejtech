@@ -22,10 +22,8 @@ export function FeaturesSection() {
               needs.
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We leverage cutting-edge technologies and development practices to
-              create websites that are not only visually stunning but also
-              technically superior and perfectly tailored to your business
-              requirements.
+              We use the latest tech to build websites that look great, work
+              smoothly, and match your business needs.
             </p>
           </div>
         </div>
@@ -34,14 +32,12 @@ export function FeaturesSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-6 lg:order-1">
             <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
-              Content should be working on both mobile screen sizes and desktops
-              and all devices inbetween.
+              Content today must be working on both mobile screen sizes and
+              desktops and all devices inbetween.
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our responsive design approach ensures your website delivers an
-              exceptional user experience across all devices, from smartphones
-              to large desktop screens, maintaining functionality and visual
-              appeal at every breakpoint.
+              We design your site to work and look great on any device—phone,
+              tablet, or desktop—at every screen size.
             </p>
           </div>
           <div className="relative lg:order-2">
@@ -72,10 +68,8 @@ export function FeaturesSection() {
               and design - something that LEJTECH can deliver.
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We combine technical excellence with aesthetic sophistication,
-              ensuring your website ranks well in search engines, loads
-              lightning-fast, maintains top-tier security standards, and
-              captivates visitors with contemporary design.
+              We use modern technologies and design so your website shows up in
+              search engines, loads fast, stays secure, and looks great.
             </p>
           </div>
         </div>
