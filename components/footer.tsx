@@ -16,7 +16,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[linear-gradient(135deg,#18181b,#393538,#18181b)] text-primary-foreground py-16">
+    <footer className="bg-[linear-gradient(135deg,#0a0f15,#212531,#0a0f15)] text-primary-foreground py-16">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-2">

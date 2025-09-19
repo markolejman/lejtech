@@ -60,24 +60,24 @@ export function ContactSection() {
             </div>
             <div className="lg:col-span-2">
               <div className="rounded-3xl h-full">
-                <div className="text-center mb-8">
-                  <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 text-balance">
-                    Get In Touch
+                <div className="text-center space-y-2 mb-10">
+                  <h1 className="text-3xl font-light text-slate-900 tracking-tight">
+                    {"Let's work together"}
                   </h1>
-                  <p className="text-muted-foreground text-lg">
-                    {"Let's discuss your project and bring your ideas to life"}
+                  <p className="text-slate-500 font-light">
+                    {"Tell me about your project and I'll get back to you soon"}
                   </p>
                 </div>
 
-                <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 md:p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-10">
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
                         <Label
                           htmlFor="fullName"
-                          className="text-sm font-medium text-gray-700"
+                          className="text-sm font-medium text-slate-700 tracking-wide"
                         >
-                          Full Name <span className="text-red-500">*</span>
+                          Full Name <span className="text-rose-400">*</span>
                         </Label>
                         <Input
                           id="fullName"
@@ -88,16 +88,16 @@ export function ContactSection() {
                             handleInputChange("fullName", e.target.value)
                           }
                           required
-                          className="h-12 bg-gray-50 border-gray-200 placeholder:text-gray-400 rounded-lg"
+                          className="h-14 bg-slate-50/50 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
                         />
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <Label
                           htmlFor="email"
-                          className="text-sm font-medium text-gray-700"
+                          className="text-sm font-medium text-slate-700 tracking-wide"
                         >
-                          Email Address <span className="text-red-500">*</span>
+                          Email Address <span className="text-rose-400">*</span>
                         </Label>
                         <Input
                           id="email"
@@ -108,17 +108,17 @@ export function ContactSection() {
                             handleInputChange("email", e.target.value)
                           }
                           required
-                          className="h-12 bg-gray-50 border-gray-200 placeholder:text-gray-400 rounded-lg"
+                          className="h-14 bg-slate-50/50 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
                         />
                       </div>
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <Label
                         htmlFor="projectType"
-                        className="text-sm font-medium text-gray-700"
+                        className="text-sm font-medium text-slate-700 tracking-wide"
                       >
-                        Project Type <span className="text-red-500">*</span>
+                        Project Type <span className="text-rose-400">*</span>
                       </Label>
                       <Select
                         value={formData.projectType}
@@ -126,15 +126,18 @@ export function ContactSection() {
                           handleInputChange("projectType", value)
                         }
                       >
-                        <SelectTrigger className="h-12 w-full bg-gray-50 border-gray-200 rounded-lg">
-                          <SelectValue placeholder="Select a project type" />
+                        <SelectTrigger className="h-14 bg-slate-50/50 border-0 rounded-2xl text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200">
+                          <SelectValue
+                            placeholder="Select a project type"
+                            className="placeholder:text-slate-400"
+                          />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="rounded-2xl border-0 shadow-xl bg-white/95 backdrop-blur-sm">
                           {projectTypes.map((type) => (
                             <SelectItem
                               key={type}
                               value={type}
-                              className="capitalize"
+                              className="capitalize rounded-xl font-light hover:bg-slate-50 focus:bg-slate-50 transition-colors duration-150"
                             >
                               {type}
                             </SelectItem>
@@ -143,12 +146,12 @@ export function ContactSection() {
                       </Select>
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       <Label
                         htmlFor="projectDetails"
-                        className="text-sm font-medium text-gray-700"
+                        className="text-sm font-medium text-slate-700 tracking-wide"
                       >
-                        Project Details <span className="text-red-500">*</span>
+                        Project Details <span className="text-rose-400">*</span>
                       </Label>
                       <Textarea
                         id="projectDetails"
@@ -158,20 +161,20 @@ export function ContactSection() {
                           handleInputChange("projectDetails", e.target.value)
                         }
                         required
-                        className="min-h-[200px] bg-gray-50 border-gray-200 placeholder:text-gray-400 resize-none rounded-lg"
+                        className="min-h-[160px] bg-slate-50/50 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light resize-none focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
                       />
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-6 pt-4">
                       <Button
                         type="submit"
-                        className="bg-slate-800 hover:bg-slate-900 text-white h-12 px-6 rounded-lg font-medium"
+                        className="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white h-14 px-8 rounded-2xl font-medium tracking-wide shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
                       >
-                        <Send className="w-4 h-4 mr-2" />
+                        <Send className="w-5 h-5 mr-3" />
                         Send Message
                       </Button>
 
-                      <p className="text-sm text-gray-500">
+                      <p className="text-center text-sm text-slate-400 font-light">
                         {
                           "I'll get back to you within 24 hours with a detailed response and next steps."
                         }
