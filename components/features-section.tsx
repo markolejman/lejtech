@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Check } from "lucide-react";
 
 export function FeaturesSection() {
   return (
@@ -17,28 +18,52 @@ export function FeaturesSection() {
             />
           </div>
           <div className="space-y-6">
-            <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
-              Get a website that is built with modern ways and adapted to your
-              needs.
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We use the latest tech to build websites that look great, work
-              smoothly, and match your business needs.
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
+                <Check
+                  className="h-5 w-5 text-white"
+                  strokeWidth={3}
+                  strokeLinecap="square"
+                  strokeLinejoin="miter"
+                />
+              </span>
+              <div>
+                <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
+                  Get a website that is built with modern ways and adapted to
+                  your needs.
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I use the latest tech to build websites that look great, work
+                  smoothly, and match your business needs.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Feature 2: Text Left, Image Right */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-6 order-2 lg:order-1">
-            <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
-              Content today must be working on both mobile screen sizes and
-              desktops and all devices inbetween.
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We design your site to work and look great on any device—phone,
-              tablet, or desktop—at every screen size.
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
+                <Check
+                  className="h-5 w-5 text-white"
+                  strokeWidth={3}
+                  strokeLinecap="square"
+                  strokeLinejoin="miter"
+                />
+              </span>
+              <div>
+                <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
+                  Content today must be working on both mobile screen sizes and
+                  desktops and all devices inbetween.
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I design your site to work and look great on any device—phone,
+                  tablet, or desktop—at every screen size.
+                </p>
+              </div>
+            </div>
           </div>
           <div className="relative order-1 lg:order-2">
             <Image
@@ -46,7 +71,7 @@ export function FeaturesSection() {
               alt="Responsive mobile dashboard design"
               width={540}
               height={810}
-              className="w-full h-auto max-w-xl lg:max-w-2xl mx-auto"
+              className="w-full h-auto max-w-xl lg:max-w-2xl mx-auto transform scale-90"
             />
           </div>
         </div>
@@ -59,18 +84,30 @@ export function FeaturesSection() {
               alt="LEJTECH website showcase on laptop"
               width={760}
               height={506}
-              className="w-full h-auto transform scale-105 md:scale-110"
+              className="w-full h-auto transform scale-110"
             />
           </div>
           <div className="space-y-6">
-            <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
-              Websites today require good SEO, speed, security and a modern look
-              and design - something that LEJTECH can deliver.
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We use modern technologies and design so your website shows up in
-              search engines, loads fast, stays secure, and looks great.
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
+                <Check
+                  className="h-5 w-5 text-white"
+                  strokeWidth={3}
+                  strokeLinecap="square"
+                  strokeLinejoin="miter"
+                />
+              </span>
+              <div>
+                <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
+                  Websites today require good SEO, speed, security and a modern
+                  look and design - something that LEJTECH can deliver.
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I use modern technologies and design so your website shows up
+                  in search engines, loads fast, stays secure, and looks great.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

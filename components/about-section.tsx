@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 
 // Map skill labels to Devicon SVGs (via jsDelivr CDN). Icons list based on TechIcons.dev (sources Devicon).
 // Fallback to local placeholder when an icon is not available.
@@ -211,9 +211,20 @@ export function AboutSection() {
                 tools to deliver quick, creative solutions that fit your goals
                 and budget — and make users happy.
               </p>
+              <div className="mt-4">
+                <a
+                  href="https://www.credential.net/70dae9b5-f880-434f-9af6-ba2c5d5e207b#acc.XfSWuONA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#303032] underline underline-offset-4 font-google-sans-code hover:opacity-80"
+                >
+                  Verify my certification
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
               <ul className="mt-8 space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                <li className="flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
                     <Check
                       className="h-5 w-5 text-white"
                       strokeWidth={3}
@@ -227,8 +238,8 @@ export function AboutSection() {
                     ensuring an experience that works for everyone.
                   </p>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                <li className="flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
                     <Check
                       className="h-5 w-5 text-white"
                       strokeWidth={3}
@@ -244,8 +255,8 @@ export function AboutSection() {
                     Nothing hurts ROI more than a buggy or slow user experience.
                   </p>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#303032]">
+                <li className="flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
                     <Check
                       className="h-5 w-5 text-white"
                       strokeWidth={3}

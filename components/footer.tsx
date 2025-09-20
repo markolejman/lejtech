@@ -109,6 +109,18 @@ export function Footer() {
                   LinkedIn
                 </a>
               </Button>
+              <Button
+                variant="ghost"
+                asChild
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-48"
+              >
+                <a
+                  href="mailto:hello@lejtech.se"
+                  className="flex items-center gap-2"
+                >
+                  hello@lejtech.se
+                </a>
+              </Button>
             </div>
           </div>
         </div>
