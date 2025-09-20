@@ -20,9 +20,9 @@ export function HeroSection() {
       gradientRef.current = new NeatGradient({
         ref: canvas,
         colors: [
-          { color: "#cacacf", enabled: true }, // Light Gray
+          { color: "#f0f0f8", enabled: true }, // Even Lighter Blue-Gray
           { color: "#ffffff", enabled: true }, // White
-          { color: "#cacacf", enabled: true }, // Light Gray
+          { color: "#f5f5fa", enabled: true }, // Almost White Gray
         ],
         speed: 6,
         horizontalPressure: 2,
@@ -30,13 +30,13 @@ export function HeroSection() {
         waveFrequencyX: 2,
         waveFrequencyY: 2,
         waveAmplitude: 5,
-        shadows: 10,
-        highlights: 8,
-        colorBrightness: 1,
-        colorSaturation: 10,
+        shadows: 5,
+        highlights: 15,
+        colorBrightness: 1.08,
+        colorSaturation: 6,
         wireframe: true,
         colorBlending: 6,
-        backgroundColor: "#cacacf",
+        backgroundColor: "#f0f0f8",
         backgroundAlpha: 1,
         grainScale: 0,
         grainSparsity: 0,
