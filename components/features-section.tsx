@@ -18,7 +18,7 @@ export function FeaturesSection() {
             />
           </div>
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
                 <Check
                   className="h-5 w-5 text-white"
@@ -32,9 +32,10 @@ export function FeaturesSection() {
                   Get a website that is built with modern ways and adapted to
                   your needs.
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-lg text-muted-foreground leading-relaxed">
                   I use the latest tech to build websites that look great, work
-                  smoothly, and match your business needs.
+                  smoothly, and fit your business needs - and I can also work
+                  with your existing setup if you already have one in place.
                 </p>
               </div>
             </div>
@@ -44,7 +45,7 @@ export function FeaturesSection() {
         {/* Feature 2: Text Left, Image Right */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-6 order-2 lg:order-1">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
                 <Check
                   className="h-5 w-5 text-white"
@@ -55,12 +56,12 @@ export function FeaturesSection() {
               </span>
               <div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
-                  Content today must be working on both mobile screen sizes and
+                  Content today must be working on both mobile screen-sizes,
                   desktops and all devices inbetween.
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  I design your site to work and look great on any device—phone,
-                  tablet, or desktop—at every screen size.
+                <p className="mt-2 text-lg text-muted-foreground leading-relaxed">
+                  I design your site to look and work great on any device -
+                  phone, tablet, or desktop.
                 </p>
               </div>
             </div>
@@ -88,7 +89,7 @@ export function FeaturesSection() {
             />
           </div>
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-5">
               <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#B1C9EF]">
                 <Check
                   className="h-5 w-5 text-white"
@@ -102,9 +103,9 @@ export function FeaturesSection() {
                   Websites today require good SEO, speed, security and a modern
                   look and design - something that LEJTECH can deliver.
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  I use modern technologies and design so your website shows up
-                  in search engines, loads fast, stays secure, and looks great.
+                <p className="mt-2 text-lg text-muted-foreground leading-relaxed">
+                  I will design your website so it shows up and ranks well in
+                  search engines, loads fast, stays secure, and looks great.
                 </p>
               </div>
             </div>

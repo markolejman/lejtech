@@ -233,7 +233,6 @@ export function AboutSection() {
                     />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
-                    <span className="font-medium">Inclusive & accessible</span>–
                     I build websites that meet web-accessibility standards,
                     ensuring an experience that works for everyone.
                   </p>
@@ -248,10 +247,7 @@ export function AboutSection() {
                     />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
-                    <span className="font-medium">
-                      Clean design & performance
-                    </span>
-                    – A neat, fast website gives you better conversion rates.
+                    A neat, fast website gives you better conversion rates.
                     Nothing hurts ROI more than a buggy or slow user experience.
                   </p>
                 </li>
@@ -265,7 +261,6 @@ export function AboutSection() {
                     />
                   </span>
                   <p className="text-[#303032] leading-relaxed text-sm sm:text-base">
-                    <span className="font-medium">Responsive by default</span>–
                     No matter what device your users are on — mobile, desktop,
                     or anything in between — I deliver working software that
                     adapts smoothly to all screen sizes.
@@ -281,7 +276,7 @@ export function AboutSection() {
               {Object.entries(skills).map(([category, skillList]) => {
                 const isRight = category === "Backend";
                 return (
-                  <div key={category} className="mb-8">
+                  <div key={category} className="mb-16">
                     <h4 className="text-lg text-[#303032] mb-3 font-google-sans-code">
                       {category}
                     </h4>
