@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   description:
     "Professional web development services by Marko. Specializing in React, Next.js, and modern full-stack solutions.",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/app/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/app/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/app/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/app/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/app/site.webmanifest",
 };
 
 export default function RootLayout({
