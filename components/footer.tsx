@@ -70,7 +70,7 @@ export function Footer() {
                 className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/markolejman"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -85,7 +85,7 @@ export function Footer() {
                 className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
-                  href="https://fiverr.com"
+                  href="https://www.fiverr.com/users/lejtech/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -100,7 +100,7 @@ export function Footer() {
                 className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/markolejman/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"

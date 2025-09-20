@@ -126,7 +126,7 @@ export function ContactSection() {
                             handleInputChange("fullName", e.target.value)
                           }
                           required
-                          className="h-14 bg-slate-50/50 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
+                          className="h-14 bg-slate-100 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
                         />
                       </div>
 
@@ -146,7 +146,7 @@ export function ContactSection() {
                             handleInputChange("email", e.target.value)
                           }
                           required
-                          className="h-14 bg-slate-50/50 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
+                          className="h-14 bg-slate-100 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
                         />
                       </div>
                     </div>
@@ -164,7 +164,7 @@ export function ContactSection() {
                           handleInputChange("projectType", value)
                         }
                       >
-                        <SelectTrigger className="h-14 bg-slate-50/50 border-0 rounded-2xl text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200">
+                        <SelectTrigger className="h-14 bg-slate-100 border-0 rounded-2xl text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200">
                           <SelectValue
                             placeholder="Select a project type"
                             className="placeholder:text-slate-400"
@@ -199,7 +199,7 @@ export function ContactSection() {
                           handleInputChange("projectDetails", e.target.value)
                         }
                         required
-                        className="min-h-[160px] bg-slate-50/50 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light resize-none focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
+                        className="min-h-[160px] bg-slate-100 border-0 rounded-2xl placeholder:text-slate-400 text-slate-900 font-light resize-none focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
                       />
                     </div>
 
