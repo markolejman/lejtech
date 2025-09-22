@@ -56,8 +56,9 @@ export function FeaturesSection() {
               </span>
               <div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight text-balance">
-                  Content today must be working on both mobile screen-sizes,
-                  desktops and all devices inbetween.
+                  Content today <span className="underline">must</span> be
+                  working on both mobile screen-sizes, desktops and all devices
+                  inbetween.
                 </h3>
                 <p className="mt-2 text-lg text-muted-foreground leading-relaxed">
                   I design your site to look and work great on any device -
@@ -104,7 +105,7 @@ export function FeaturesSection() {
                   look and design - something that LEJTECH can deliver.
                 </h3>
                 <p className="mt-2 text-lg text-muted-foreground leading-relaxed">
-                  I will design your website so it shows up and ranks well in
+                  I will design your website so it shows up and ranks better in
                   search engines, loads fast, stays secure, and looks great.
                 </p>
               </div>
