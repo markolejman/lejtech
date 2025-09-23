@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "LEJTECH - Modern Web Development Solutions",
   description:
-    "Professional web development services by Marko. Specializing in React, Next.js, and modern full-stack solutions.",
+    "LEJTECH delivers modern, responsive web development solutions with expert React and Next.js development. Specializing in SEO-optimized, high-performance websites, mobile-first design, and secure full-stack applications. Transform your digital presence with our professional web services.",
   generator: "v0.app",
   icons: {
     icon: [
