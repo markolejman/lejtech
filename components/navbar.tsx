@@ -77,7 +77,6 @@ export function Navbar() {
               {[
                 { id: "hero", label: "Home" },
                 { id: "about", label: "About" },
-                { id: "projects", label: "Projects" },
                 { id: "contact", label: "Contact" },
               ].map(({ id, label }) => (
                 <Button
@@ -152,7 +151,6 @@ export function Navbar() {
                   {[
                     { id: "hero", label: "Home" },
                     { id: "about", label: "About" },
-                    { id: "projects", label: "Projects" },
                     { id: "contact", label: "Contact" },
                   ].map(({ id, label }) => (
                     <Button
