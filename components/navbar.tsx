@@ -105,6 +105,9 @@ export function Navbar() {
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="relative z-50"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 <AnimatePresence mode="wait">
                   {isMobileMenuOpen ? (
@@ -141,6 +144,8 @@ export function Navbar() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="md:hidden pt-4"
+                id="mobile-menu"
+                role="menu"
               >
                 <div className="flex flex-col items-center gap-2">
                   {[

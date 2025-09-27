@@ -87,7 +87,7 @@ export function ContactSection() {
                 }
               >
                 <Image
-                  src="/mockup1.png"
+                  src="/mockup1.webp"
                   alt="Project mockup"
                   fill
                   className="object-cover"
@@ -99,9 +99,9 @@ export function ContactSection() {
               <div className="rounded-3xl h-full" ref={formContainerRef}>
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-10">
                   <div className="text-center space-y-2 mb-8">
-                    <h1 className="text-3xl font-light text-slate-900 tracking-tight">
+                    <h2 className="text-3xl font-light text-slate-900 tracking-tight">
                       {"Let's work together"}
-                    </h1>
+                    </h2>
                     <p className="text-slate-500 font-light">
                       {
                         "Tell me about your project and I'll get back to you soon"
@@ -153,6 +153,7 @@ export function ContactSection() {
 
                     <div className="space-y-3">
                       <Label
+                        id="projectType-label"
                         htmlFor="projectType"
                         className="text-sm font-medium text-slate-700 tracking-wide"
                       >
@@ -164,7 +165,12 @@ export function ContactSection() {
                           handleInputChange("projectType", value)
                         }
                       >
-                        <SelectTrigger className="h-14 bg-slate-100 border-0 rounded-2xl text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200">
+                        <SelectTrigger
+                          id="projectType"
+                          aria-labelledby="projectType-label"
+                          aria-label="Project type"
+                          className="h-14 bg-slate-100 border-0 rounded-2xl text-slate-900 font-light focus:bg-white focus:ring-2 focus:ring-slate-200 transition-all duration-200"
+                        >
                           <SelectValue
                             placeholder="Select a project type"
                             className="placeholder:text-slate-400"

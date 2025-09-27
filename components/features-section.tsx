@@ -9,7 +9,7 @@ export function FeaturesSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative">
             <Image
-              src="/image1about.png"
+              src="/image1about.webp"
               alt="Modern web development with analytics dashboard"
               width={420}
               height={238}
@@ -69,7 +69,7 @@ export function FeaturesSection() {
           </div>
           <div className="relative order-1 lg:order-2">
             <Image
-              src="/image2about.png"
+              src="/image2about.webp"
               alt="Responsive mobile dashboard design"
               width={540}
               height={810}
@@ -82,7 +82,7 @@ export function FeaturesSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative overflow-visible">
             <Image
-              src="/image3about.png"
+              src="/image3about.webp"
               alt="LEJTECH website showcase on laptop"
               width={760}
               height={506}

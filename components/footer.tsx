@@ -20,7 +20,7 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-2">
-            <img src="/lejtech.png" alt="LEJTECH Logo" className="h-24 mb-4" />
+            <img src="/lejtech.webp" alt="LEJTECH Logo" className="h-24 mb-4" />
             <p className="text-primary-foreground/80 leading-relaxed">
               Professional web development solutions with a focus on modern
               technologies and exceptional user experiences.
@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Navigation</h4>
+            <h3 className="font-semibold mb-4">Navigation</h3>
             <div className="flex flex-col space-y-3">
               <Button
                 variant="ghost"
@@ -62,7 +62,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
+            <h3 className="font-semibold mb-4">Connect</h3>
             <div className="flex flex-col space-y-3">
               <Button
                 variant="ghost"
@@ -112,13 +112,13 @@ export function Footer() {
               <Button
                 variant="ghost"
                 asChild
-                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-48"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-fit"
               >
                 <a
-                  href="mailto:hello@lejtech.se"
+                  href="mailto:lejtechbusiness@gmail.com"
                   className="flex items-center gap-2"
                 >
-                  hello@lejtech.se
+                  lejtechbusiness@gmail.com
                 </a>
               </Button>
             </div>

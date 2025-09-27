@@ -6,26 +6,26 @@ export function ProjectsCarousel() {
       id: 1,
       title:
         "Modern Artist Landing Page - Next.js, Typescript, Vercel and Shadcn",
-      image: "/example1.png",
+      image: "/example1.webp",
       link: "https://github.com/markolejman/zen1beats",
     },
     {
       id: 2,
       title:
         "Finance Dashboard - React 19, Node.js, MongoDB, TypeScript, Machine Learning, API, MUI, Recharts, Vercel, Flyctl.",
-      image: "/example2.png",
+      image: "/example2.webp",
       link: "https://github.com/markolejman/MERN-finance-bank-app",
     },
     {
       id: 3,
       title: "To-Do App - React 19, Three.js, Vite, Vercel.",
-      image: "/example3.png",
+      image: "/example3.webp",
       link: "https://github.com/markolejman/react-app",
     },
     {
       id: 4,
       title: "Social Media App - React, Python, PostgreSQL, Heroku.",
-      image: "/example4.png",
+      image: "/example4.webp",
       link: "https://github.com/markolejman/django-rest-api",
     },
   ];
@@ -45,7 +45,8 @@ export function ProjectsCarousel() {
               >
                 <img
                   src={project.image || "/placeholder.svg"}
-                  alt={project.title}
+                  alt=""
+                  aria-hidden="true"
                   className="w-full h-full object-cover rounded-3xl"
                   loading="lazy"
                 />
@@ -63,7 +64,8 @@ export function ProjectsCarousel() {
               >
                 <img
                   src={project.image || "/placeholder.svg"}
-                  alt={project.title}
+                  alt=""
+                  aria-hidden="true"
                   className="w-full h-full object-cover rounded-3xl"
                   loading="lazy"
                 />
