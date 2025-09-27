@@ -50,9 +50,10 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        isScrolled ? "mx-4 mt-4 rounded-[16px]" : "rounded-none"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out ${
+        isScrolled ? "mt-4 px-4" : "px-0"
       }`}
+      style={{ WebkitOverflowScrolling: "touch" }}
     >
       <div
         className={`relative w-full transition-all duration-500 ease-in-out ${
@@ -61,7 +62,7 @@ export function Navbar() {
             : "bg-white/10 backdrop-blur-sm rounded-none"
         }`}
       >
-        <div className="container mx-auto px-6 py-4">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <motion.div
               initial={{ opacity: 0, x: -20 }}

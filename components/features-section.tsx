@@ -80,13 +80,13 @@ export function FeaturesSection() {
 
         {/* Feature 3: Image Left, Text Right */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative overflow-visible">
+          <div className="relative overflow-hidden">
             <Image
               src="/image3about.webp"
               alt="LEJTECH website showcase on laptop"
               width={760}
               height={506}
-              className="w-full h-auto transform scale-110"
+              className="w-full h-auto lg:scale-110"
             />
           </div>
           <div className="space-y-6">

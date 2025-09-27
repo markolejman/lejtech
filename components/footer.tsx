@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowUp, Github, ExternalLink, Linkedin } from "lucide-react";
+import { ArrowUp, Github, ExternalLink, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -17,48 +17,14 @@ export function Footer() {
 
   return (
     <footer className="bg-[linear-gradient(135deg,#0a0f15,#212531,#0a0f15)] text-primary-foreground py-16">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-2">
             <img src="/lejtech.webp" alt="LEJTECH Logo" className="h-24 mb-4" />
             <p className="text-primary-foreground/80 leading-relaxed">
               Professional web development solutions with a focus on modern
               technologies and exceptional user experiences.
             </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Navigation</h3>
-            <div className="flex flex-col space-y-3">
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("hero")}
-                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
-              >
-                Home
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("about")}
-                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
-              >
-                About
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("projects")}
-                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
-              >
-                Projects
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => scrollToSection("contact")}
-                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
-              >
-                Contact
-              </Button>
-            </div>
           </div>
 
           <div>
@@ -112,14 +78,49 @@ export function Footer() {
               <Button
                 variant="ghost"
                 asChild
-                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-fit"
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
               >
                 <a
                   href="mailto:lejtechbusiness@gmail.com"
                   className="flex items-center gap-2"
                 >
-                  lejtechbusiness@gmail.com
+                  <Mail size={16} />
+                  Email
                 </a>
+              </Button>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Navigation</h3>
+            <div className="flex flex-col space-y-3">
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("hero")}
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
+              >
+                Home
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("about")}
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
+              >
+                About
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("projects")}
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
+              >
+                Projects
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("contact")}
+                className="text-primary-foreground/80 hover:text-white p-0 h-auto justify-start hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out w-32"
+              >
+                Contact
               </Button>
             </div>
           </div>
