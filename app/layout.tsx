@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "LEJTECH - Modern Web Development Solutions",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className="font-google-sans-code">
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         <Analytics />
+        <Toaster />
       </body>
     </html>
   );

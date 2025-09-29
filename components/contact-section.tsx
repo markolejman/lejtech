@@ -15,14 +15,19 @@ import {
 } from "@/components/ui/select";
 import Image from "next/image";
 import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     projectType: "",
     projectDetails: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   // Match image height to the form's initial height on large screens only
   const formContainerRef = useRef<HTMLDivElement | null>(null);
@@ -63,9 +68,60 @@ export function ContactSection() {
     "other",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    if (!formRef.current) return;
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast({
+        title: "Email not configured",
+        description:
+          "Missing EmailJS env vars. Please set service, template, and public key.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      // Prepare params that match the EmailJS template variables
+      const templateParams = {
+        name: formData.fullName,
+        email: formData.email,
+        project_type: formData.projectType,
+        message: formData.projectDetails,
+      } as Record<string, string>;
+
+      await emailjs.send(serviceId, templateId, templateParams, {
+        publicKey,
+      });
+
+      toast({
+        title: "Message sent",
+        description: "Thanks! I'll get back to you within 24 hours.",
+      });
+
+      setFormData({
+        fullName: "",
+        email: "",
+        projectType: "",
+        projectDetails: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Failed to send",
+        description: "Please try again or email lejtechbusiness@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -108,7 +164,11 @@ export function ContactSection() {
                       }
                     </p>
                   </div>
-                  <form onSubmit={handleSubmit} className="space-y-8">
+                  <form
+                    ref={formRef}
+                    onSubmit={handleSubmit}
+                    className="space-y-8"
+                  >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <Label
@@ -213,9 +273,10 @@ export function ContactSection() {
                       <Button
                         type="submit"
                         className="w-full bg-slate-900 hover:bg-slate-800 text-white h-14 px-8 rounded-2xl font-medium tracking-wide shadow-md hover:shadow-lg transition-colors duration-150"
+                        disabled={isSubmitting}
                       >
                         <Send className="w-5 h-5 mr-3" />
-                        Send Message
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
 
                       <p className="text-center text-sm text-slate-400 font-light">
