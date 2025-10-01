@@ -6,10 +6,12 @@ import { NeatGradient } from "@firecms/neat";
 
 export function HeroSection() {
   const gradientRef = useRef<any>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const inViewRef = useRef(false);
 
   useEffect(() => {
     const initGradient = (canvas: HTMLCanvasElement) => {
-      // Cleanup previous instance if it exists
       if (gradientRef.current) {
         gradientRef.current.destroy();
       }
@@ -20,9 +22,9 @@ export function HeroSection() {
       gradientRef.current = new NeatGradient({
         ref: canvas,
         colors: [
-          { color: "#f0f0f8", enabled: true }, // Even Lighter Blue-Gray
-          { color: "#ffffff", enabled: true }, // White
-          { color: "#f5f5fa", enabled: true }, // Almost White Gray
+          { color: "#f0f0f8", enabled: true },
+          { color: "#ffffff", enabled: true },
+          { color: "#f5f5fa", enabled: true },
         ],
         speed: 6,
         horizontalPressure: 2,
@@ -48,29 +50,59 @@ export function HeroSection() {
     };
 
     const handleResize = () => {
-      const canvas = document.getElementById(
-        "neat-background"
-      ) as HTMLCanvasElement;
-      if (canvas) {
-        initGradient(canvas);
-      }
+      if (!canvasRef.current) return;
+      initGradient(canvasRef.current);
     };
 
-    window.addEventListener("resize", handleResize);
+    const start = () => {
+      if (!canvasRef.current) return;
+      initGradient(canvasRef.current);
+      window.addEventListener("resize", handleResize);
+    };
 
-    // Initial setup
-    const canvas = document.getElementById(
-      "neat-background"
-    ) as HTMLCanvasElement;
-    if (canvas) {
-      initGradient(canvas);
-    }
-
-    return () => {
+    const stop = () => {
       window.removeEventListener("resize", handleResize);
       if (gradientRef.current) {
         gradientRef.current.destroy();
+        gradientRef.current = null;
       }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible" && inViewRef.current) {
+        start();
+      } else {
+        stop();
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            inViewRef.current = true;
+            if (document.visibilityState === "visible") {
+              start();
+            }
+          } else {
+            inViewRef.current = false;
+            stop();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      observer.disconnect();
+      stop();
     };
   }, []);
 
@@ -93,10 +125,12 @@ export function HeroSection() {
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       <canvas
+        ref={canvasRef}
         id="neat-background"
         className="absolute inset-0 z-0 w-full h-full"
       ></canvas>
